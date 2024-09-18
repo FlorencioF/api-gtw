@@ -34,8 +34,10 @@ jobs:
 
       - name: Set up SSH
         run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_ed25519
           eval "$(ssh-agent -s)"
-          ssh-add ${{ secrets.SSH_PRIVATE_KEY }}
+          ssh-add ~/.ssh/id_ed25519
 
       - name: Copy configuration file
         run: |
