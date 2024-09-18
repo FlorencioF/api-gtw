@@ -33,9 +33,9 @@ jobs:
           echo "::set-output name=ip::$(doctl compute droplet list --format PublicIPv4 --no-header | head -n 1)"
 
       - name: Set up SSH
-        uses: webfactory/ssh-agent@v0.5.3
-        with:
-          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+        run: |
+          eval "$(ssh-agent -s)"
+          ssh-add ${{ secrets.SSH_PRIVATE_KEY }}
 
       - name: Copy configuration file
         run: |
