@@ -21,7 +21,7 @@ jobs:
 
       - name: Authenticate with Digital Ocean
         run: |
-          echo "${{ secrets.DO_AUTH_TOKEN }}" | doctl auth init -t
+          doctl auth init -t DO_AUTH_TOKEN 
 
       - name: Create Droplet
         run: |
