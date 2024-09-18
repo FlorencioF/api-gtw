@@ -15,7 +15,7 @@ jobs:
         
       - name: Install doctl
         run: |
-          wget https://github.com/digitalocean/doctl/releases/latest/download/doctl-$(uname -s)-$(uname -m).tar.gz
+          wget https://github.com/digitalocean/doctl/releases/download/v1.110.0/doctl-1.110.0-linux-amd64.tar.gz
           tar xf doctl-*.tar.gz
           sudo mv doctl /usr/local/bin
 
