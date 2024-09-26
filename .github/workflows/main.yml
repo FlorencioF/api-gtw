@@ -25,4 +25,4 @@ jobs:
 
       - name: Deploy to Digital Ocean
         run: |
-          # ssh -o StrictHostKeyChecking=no root@${{ env.DROPLET_IP }} "cd /src/docker-compose/directory && docker-compose -f docker-compose.yml pull && docker-compose -f docker-compose.yml up -d"
+          ssh -o StrictHostKeyChecking=no root@${{ env.DROPLET_IP }} "cd /src/docker-compose/directory && docker-compose -f docker-compose.yml pull && docker-compose -f docker-compose.yml up -d"
