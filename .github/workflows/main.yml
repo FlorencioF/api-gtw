@@ -16,7 +16,7 @@ jobs:
       - name: Set up DigitalOcean [MyBurger ≡]
         uses: digitalocean/action-doctl@v2
         with:
-          token: ${{ secrets.DO_TOKEN_ACCESS }}
+          token: ${{ secrets.DO_AUTH_TOKEN }}
 
       - name: Get First Droplet ID [MyBurger ≡]
         run: |
