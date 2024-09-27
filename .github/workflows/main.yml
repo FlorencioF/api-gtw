@@ -37,7 +37,7 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           source: "terraform.tar"
           target: "src"
-          strip_components: 1
+          timeout: 120s
         
       - name: Deploy to Digital Ocean droplet via SSH action
         uses: appleboy/ssh-action@v0.1.3
@@ -46,7 +46,6 @@ jobs:
           username: root
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
-            tar xvf terraform.tar
             cd src/terraform/
             docker-compose -f docker-compose.yml pull
             docker-compose -f docker-compose.yml up -d
