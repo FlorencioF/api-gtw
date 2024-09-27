@@ -46,7 +46,7 @@ jobs:
           username: root
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
-            apt-get install docker-compose
+            apt-get -y install docker-compose
             cd src/
             tar xvf terraform.tar
             cd terraform/
