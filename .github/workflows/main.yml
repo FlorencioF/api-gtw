@@ -30,7 +30,7 @@ jobs:
           username: root
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           source: /src/
-          target: /src/docker-compose/
+          target: /
           
         
       - name: Deploy to Digital Ocean droplet via SSH action
@@ -40,6 +40,6 @@ jobs:
           username: root
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
-            cd /src/docker-compose/directory
+            cd /src/docker-compose/kong
             docker-compose -f docker-compose.yml pull
             docker-compose -f docker-compose.yml up -d
