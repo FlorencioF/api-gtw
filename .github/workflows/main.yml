@@ -36,7 +36,7 @@ jobs:
           username: root
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           source: "terraform.tar"
-          target: ~/src/
+          target: "src"
           strip_components: 1
         
       - name: Deploy to Digital Ocean droplet via SSH action
