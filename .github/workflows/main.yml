@@ -37,6 +37,7 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           source: "terraform.tar"
           target: "src"
+          timeout: 120s
         
       - name: Deploy to Digital Ocean droplet via SSH action
         uses: appleboy/ssh-action@master
