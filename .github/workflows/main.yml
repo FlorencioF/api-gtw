@@ -29,7 +29,7 @@ jobs:
           host: ${{ env.DROPLET_IP }}
           username: root
           key: ${{ secrets.SSH_PRIVATE_KEY }}
-          source: /src/*
+          source: /src/
           target: /src/docker-compose/
           
         
