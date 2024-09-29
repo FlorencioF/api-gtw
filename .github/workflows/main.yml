@@ -25,9 +25,9 @@ jobs:
 
       - name: Run a multi-line script
         run: |
-          mkdir ../terraform
-          cp -TR ./src ../terraform
-          tar -cvf terraform.tar ../terraform/
+          mkdir ../app
+          cp -TR ./src ../app
+          tar -cvf app.tar ../app/
 
       - name: copy file via ssh password
         uses: appleboy/scp-action@v0.1.7
@@ -35,7 +35,7 @@ jobs:
           host: ${{ env.DROPLET_IP }}
           username: root
           key: ${{ secrets.SSH_PRIVATE_KEY }}
-          source: "terraform.tar"
+          source: "app.tar"
           target: "src"
           timeout: 120s
         
@@ -50,7 +50,7 @@ jobs:
             sudo ufw allow 8080/tcp
             apt-get -y install docker-compose
             cd src/
-            tar xvf terraform.tar
-            cd terraform/
+            tar xvf app.tar
+            cd app/
             docker-compose -f docker-compose.yml pull
             docker-compose -f docker-compose.yml up -d
