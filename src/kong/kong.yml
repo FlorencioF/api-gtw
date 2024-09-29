@@ -2,7 +2,7 @@ _format_version: "3.0"
 _transform: true
 
 services:
-- host: faas-nyc1-2ef2e6cc.doserverless.co/api/v1/web/fn-40807b32-b98c-439f-8bd7-99d62dcc3994/authentication/authenticate
+- host: gmail.com
   name: auth_service
   port: 8080
   protocol: http
