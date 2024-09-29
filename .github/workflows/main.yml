@@ -47,7 +47,7 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
             ufw enable
-            sudo ufw allow 8080/tcp
+            ufw allow 8080/tcp
             apt-get -y install docker-compose
             cd src/
             tar --overwrite -xvf app.tar
