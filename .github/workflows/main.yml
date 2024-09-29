@@ -46,6 +46,8 @@ jobs:
           username: root
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
+            ufw enable
+            sudo ufw allow 8080/tcp
             apt-get -y install docker-compose
             cd src/
             tar xvf terraform.tar
