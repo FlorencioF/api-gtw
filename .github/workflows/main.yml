@@ -50,7 +50,9 @@ jobs:
             sudo ufw allow 8080/tcp
             apt-get -y install docker-compose
             cd src/
-            tar xvf app.tar
+            tar --overwrite -xvf app.tar
             cd app/
+            docker-compose -f docker-compose.yml down
             docker-compose -f docker-compose.yml pull
             docker-compose -f docker-compose.yml up -d
+
