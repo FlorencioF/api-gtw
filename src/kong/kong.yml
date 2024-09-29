@@ -2,10 +2,8 @@ _format_version: "3.0"
 _transform: true
 
 services:
-- host: faas-nyc1-2ef2e6cc.doserverless.co/api/v1/web/fn-40807b32-b98c-439f-8bd7-99d62dcc3994/authentication/authenticate
+- url: https://c1-2ef2e6cc.doserverless.co/api/v1/web/fn-40807b32-b98c-439f-8bd7-99d62dcc3994/authentication/authenticate
   name: auth_service
-  port: 443
-  protocol: https
   routes:
   - name: auth_route
     paths:
