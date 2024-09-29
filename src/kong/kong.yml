@@ -2,21 +2,10 @@ _format_version: "3.0"
 _transform: true
 
 services:
-- host: google.com
-  name: auth_service
-  port: 443
-  protocol: https
+- name: auth_service
+  url: https://faas-nyc1-2ef2e6cc.doserverless.co/api/v1/web/fn-40807b32-b98c-439f-8bd7-99d62dcc3994/authentication/authenticate
   routes:
   - name: auth_route
     paths:
-    - /auth
-    strip_path: true
-- host: gmail.com
-  name: app_service
-  port: 80
-  protocol: http
-  routes:
-  - name: app_route
-    paths:
-    - /app
+    - "/auth"
     strip_path: true
